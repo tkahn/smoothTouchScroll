@@ -14,7 +14,7 @@ I'm currently working on building a demo and documentation page for Smooth Touch
 
 1. Include jQuery:
 
-	```
+	```html
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	```
 2. Include jQuery UI containing only the widget functionality:
@@ -39,7 +39,7 @@ Kinetic is included in the download. If you want to know more, you'll find [all 
 
 3. Call the plugin:
 
-	```html
+	```javascript
 	$("#element").smoothTouchScroll();
 	```
 
