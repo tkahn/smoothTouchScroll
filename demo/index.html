@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery SmoothTouchScroll</title>
+		
+		<!-- the CSS for Smooth Touch Scroll -->
+		<link rel="Stylesheet" type="text/css" href="../css/smoothTouchScroll.css" />
+		
+		<!-- Styles for my specific scrolling content -->
+		<style type="text/css">
+
+			#touchScroller
+			{
+				width:100%;
+				height: 330px;
+				position: relative;
+			}
+			
+			/* Replace the last selector for the type(s) of element(s) you have in
+			   your scroller.
+			   If you have images use #touchScroller div.scrollableArea img,
+			   If you have div's use #touchScroller div.scrollableArea div,
+			   if you have links use #touchScroller div.scrollableArea a,
+			   or add several selectors if you have mixed content
+			   ...and so on. */
+			#touchScroller div.scrollableArea a
+			{
+				position: relative;
+				float: left;
+				margin: 0;
+				padding: 0 5px;
+				/* If you don't want the images in the scroller to be selectable, try the following
+				   block of code. It's just a nice feature that prevent the images from
+				   accidentally becoming selected/inverted when the user interacts with the scroller. */
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+			}
+			
+		</style>
+		<!-- jQuery - Get it from Google API's -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<!-- jQuery UI - contains only widget -->
+		<script src="../js/jquery-ui-1.10.3.custom.min.js"></script>
+		<!-- jQuery kinetic -->
+		<script src="../js/jquery.kinetic.min.js"></script>
+		<!-- Smooth Touch Scroll -->
+		<script src="../js/jquery.smoothTouchScroll.min.js"></script>
+	</head>
+	<body>
+		<div id="touchScroller">
+			<a href="#"><img src="images/field.jpg" alt="Demo image" id="field" /></a>
+			<a href="#"><img src="images/gnome.jpg" alt="Demo image" id="gnome" /></a>
+			<a href="#"><img src="images/pencils.jpg" alt="Demo image" id="pencils" /></a>
+			<a href="#"><img src="images/golf.jpg" alt="Demo image" id="golf" /></a>
+			<a href="#"><img src="images/river.jpg" alt="Demo image" id="river" /></a>
+			<a href="#"><img src="images/train.jpg" alt="Demo image" id="train" /></a>
+			<a href="#"><img src="images/leaf.jpg" alt="Demo image" id="leaf" /></a>
+			<a href="#"><img src="images/dog.jpg" alt="Demo image" id="dog" /></a>
+		</div>
+		
+		
+		<script>
+			$(function() {
+				$("#touchScroller").smoothTouchScroll({ continuousScrolling: true });
+			});
+		</script>
+	</body>
+</html>
