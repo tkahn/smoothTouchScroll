@@ -141,18 +141,22 @@
 		**********************************************************/
 		recalculateScrollableArea: function () {
 
-			var tempScrollableAreaWidth = 0, foundStartAtElement = false, o = this.options, el = this.element;
+			var tempScrollableAreaWidth = 0, foundStartAtElement = false, o = this.options, el = this.element, children = el.data("scrollableArea").children();
 
 			// Add up the total width of all the items inside the scrollable area
-			el.data("scrollableArea").children().each(function () {
-				// Check to see if the current element in the loop is the one where the scrolling should start
-				if ((o.startAtElementId.length > 0) && (($(this).attr("id")) === o.startAtElementId)) {
-					el.data("startingPosition", tempScrollableAreaWidth);
-					foundStartAtElement = true;
-				}
-				tempScrollableAreaWidth = tempScrollableAreaWidth + $(this).outerWidth(true);
-
-			});
+			if (children.length) {
+				el.data("scrollableArea").children().each(function () {
+					// Check to see if the current element in the loop is the one where the scrolling should start
+					if ((o.startAtElementId.length > 0) && (($(this).attr("id")) === o.startAtElementId)) {
+						el.data("startingPosition", tempScrollableAreaWidth);
+						foundStartAtElement = true;
+					}
+					tempScrollableAreaWidth = tempScrollableAreaWidth + $(this).outerWidth(true);
+				});
+			} else {
+				// Doesn't have children, so calculate width of scollableAread
+				tempScrollableAreaWidth += el.data("scrollableArea").outerWidth(true);
+			}
 
 			// If the element with the ID specified by startAtElementId
 			// is not found, reset it
