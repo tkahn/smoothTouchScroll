@@ -27,7 +27,7 @@ If you need more from jQuery UI than just the widget functionality you can use [
 2. Include the minified version of jQuery Kinetic:
 
 	```html
-	<script src="js/jquery.kinetic.min.js.min.js"></script>
+	<script src="js/jquery.kinetic.min.js"></script>
 	```
 Kinetic is included in the download. If you want to know more, you'll find [all the information here](http://davetayls.me/jquery.kinetic/).
 
