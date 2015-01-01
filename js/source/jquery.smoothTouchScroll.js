@@ -27,6 +27,7 @@
 			scrollWrapperClass: "scrollWrapper", // String
 			continuousScrolling: false, // Boolean
 			startAtElementId: "", // String
+			enableLinks: false
         },
 
         // Setup widget
@@ -110,7 +111,12 @@
 					stopped: function (settings) {
 						// Callback
 						self._trigger("touchStopped");
-					}
+					},
+                    filterTarget: function(target,e){
+                        if (o.enableLinks && !/down|start/.test(e.type)){
+                            return !(/a|img/i.test(target.tagName));
+                        }
+                    }
 				});
 			}
 			
