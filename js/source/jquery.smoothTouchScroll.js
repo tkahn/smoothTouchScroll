@@ -110,7 +110,10 @@
 					stopped: function (settings) {
 						// Callback
 						self._trigger("touchStopped");
-					}
+					},
+					filterTarget: function(target, e){
+				        return false;
+				    }
 				});
 			}
 			
